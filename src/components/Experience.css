@@ -1,0 +1,80 @@
+.experience-item {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--bg-tertiary);
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px var(--shadow);
+  transition: all 0.4s ease;
+}
+
+.experience-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px var(--shadow-red);
+  border-color: var(--redis-red);
+}
+
+.experience-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.experience-title {
+  font-size: 28px;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.experience-company {
+  display: block;
+  font-size: 18px;
+  color: var(--redis-red);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.experience-date {
+  display: block;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.experience-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.experience-list li {
+  padding: 0.8rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.experience-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--redis-red);
+  font-weight: 600;
+}
+
+.experience-list li strong {
+  color: var(--accent-lime);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .experience-item {
+    padding: 30px 20px;
+  }
+}
+

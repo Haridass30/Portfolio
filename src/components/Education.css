@@ -1,0 +1,76 @@
+.education-item {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-tertiary);
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px var(--shadow-red);
+  border-color: var(--redis-red);
+}
+
+.education-icon {
+  font-size: 48px;
+  color: var(--redis-red);
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
+
+.education-item:hover .education-icon {
+  transform: scale(1.2);
+}
+
+.education-content {
+  flex: 1;
+}
+
+.education-degree {
+  font-size: 28px;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.education-institution {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.education-period {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.education-percentage {
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.education-percentage strong {
+  color: var(--accent-lime);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .education-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+}
+

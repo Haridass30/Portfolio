@@ -1,0 +1,54 @@
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 2rem;
+}
+
+.certification-card {
+  background: var(--bg-tertiary);
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px var(--shadow-red);
+  border-color: var(--redis-red);
+}
+
+.certification-card i {
+  font-size: 48px;
+  color: var(--redis-red);
+  margin-bottom: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.certification-card:hover i {
+  transform: scale(1.2) rotate(15deg);
+}
+
+.certification-card h3 {
+  font-size: 22px;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.certification-card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
