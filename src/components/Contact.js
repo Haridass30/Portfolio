@@ -2,32 +2,73 @@ import React from 'react';
 import './Contact.css';
 
 const Contact = () => {
-  const contactLinks = [
-    { icon: 'fa-envelope', text: 'Email', href: 'mailto:haridass3014@gmail.com' },
-    { icon: 'fa-phone', text: 'Call', href: 'tel:8525876381' },
-    { icon: 'fa-linkedin', type: 'fab', text: 'LinkedIn', href: 'https://linkedin.com/in/hari-dass-25bb44345' },
-    { icon: 'fa-github', type: 'fab', text: 'GitHub', href: 'https://github.com/haridass3012' }
+  const contactMethods = [
+    {
+      icon: 'fa-envelope',
+      type: 'fas',
+      title: 'Email',
+      value: 'haridass3014@gmail.com',
+      href: 'mailto:haridass3014@gmail.com',
+      description: 'Send me an email'
+    },
+    {
+      icon: 'fa-phone',
+      type: 'fas',
+      title: 'Phone',
+      value: '+91 8525876381',
+      href: 'tel:8525876381',
+      description: 'Give me a call'
+    },
+    {
+      icon: 'fa-linkedin',
+      type: 'fab',
+      title: 'LinkedIn',
+      value: 'Connect with me',
+      href: 'https://linkedin.com/in/hari-dass-25bb44345',
+      description: 'Professional network'
+    },
+    {
+      icon: 'fa-github',
+      type: 'fab',
+      title: 'GitHub',
+      value: 'View my code',
+      href: 'https://github.com/haridass3012',
+      description: 'Check my repositories'
+    }
   ];
 
   return (
     <section id="contact" className="section section-alt">
       <div className="container">
-        <h2 className="section-title">Get In Touch</h2>
-        <div className="contact-content">
-          <p className="contact-description">
-            I'm always open to discussing new opportunities, interesting projects, or just having a chat about cloud infrastructure and DevOps!
-          </p>
-          <div className="contact-links">
-            {contactLinks.map((link, index) => (
-              <a 
-                key={index} 
-                href={link.href} 
-                className="contact-link"
-                target={link.href.startsWith('http') ? '_blank' : undefined}
-                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+        <div className="contact-wrapper">
+          <div className="contact-header">
+            <h2 className="section-title">Get In Touch</h2>
+            <p className="contact-description">
+              I'm always open to discussing new opportunities, interesting projects,
+              or just having a chat about cloud infrastructure and DevOps.
+              Let's build something amazing together!
+            </p>
+          </div>
+          <div className="contact-grid">
+            {contactMethods.map((method, index) => (
+              <a
+                key={index}
+                href={method.href}
+                className="contact-card"
+                target={method.href.startsWith('http') ? '_blank' : undefined}
+                rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               >
-                <i className={`${link.type || 'fas'} ${link.icon}`}></i>
-                <span>{link.text}</span>
+                <div className="contact-card-icon">
+                  <i className={`${method.type} ${method.icon}`}></i>
+                </div>
+                <div className="contact-card-content">
+                  <h3 className="contact-card-title">{method.title}</h3>
+                  <p className="contact-card-value">{method.value}</p>
+                  <span className="contact-card-desc">{method.description}</span>
+                </div>
+                <div className="contact-card-arrow">
+                  <i className="fas fa-arrow-right"></i>
+                </div>
               </a>
             ))}
           </div>
@@ -38,4 +79,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

@@ -16,6 +16,11 @@
   --border: #2A2A3A;
   --shadow: rgba(0, 0, 0, 0.3);
   --shadow-red: rgba(220, 56, 45, 0.2);
+  --gradient-primary: linear-gradient(135deg, var(--redis-red) 0%, var(--redis-red-dark) 100%);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-hover: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -65,49 +70,75 @@ h1, h2, h3 {
   letter-spacing: -1.5px;
   color: var(--text-primary);
   text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-primary);
+  margin: 20px auto 0;
+  border-radius: 2px;
 }
 
 .section-title strong {
   color: var(--accent-lime);
 }
 
-/* Brutalist Button Styles */
+/* Professional Button Styles */
 .btn {
-  background: #fbca1f;
   font-family: inherit;
-  padding: 0.6em 1.3em;
-  font-weight: 900;
-  font-size: 18px;
-  border: 3px solid black;
-  border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
+  padding: 14px 32px;
+  font-weight: 600;
+  font-size: 16px;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   text-decoration: none;
-  color: black;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
-.btn:hover {
-  transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.15em 0.15em;
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: rgba(220, 56, 45, 0.3);
+  box-shadow: 0 4px 15px var(--shadow-red);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--shadow-red);
+  background: linear-gradient(135deg, var(--redis-red-light) 0%, var(--redis-red) 100%);
+}
+
+.btn-secondary {
+  background: var(--glass-bg);
+  color: var(--text-primary);
+  border-color: var(--glass-border);
+}
+
+.btn-secondary:hover {
+  background: var(--glass-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: var(--glass-shadow);
 }
 
 .btn:active {
-  transform: translate(0.05em, 0.05em);
-  box-shadow: 0.05em 0.05em;
-}
-
-.btn-primary,
-.btn-secondary {
-  background: #fbca1f;
-  color: black;
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
   .section {
     padding: 60px 0;
   }
-  
+
   .container {
     padding: 0 20px;
   }

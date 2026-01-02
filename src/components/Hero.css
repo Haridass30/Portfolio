@@ -9,23 +9,72 @@
   overflow: hidden;
 }
 
-.hero::before {
-  content: '';
+.hero-background {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(220, 56, 45, 0.05) 0%, transparent 70%);
   pointer-events: none;
+}
+
+.hero-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(220, 56, 45, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(220, 56, 45, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 40%, transparent 100%);
+}
+
+.hero-glow {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(220, 56, 45, 0.08) 0%, transparent 70%);
+  filter: blur(60px);
 }
 
 .hero-content {
   text-align: left;
-  max-width: 800px;
+  max-width: 900px;
   position: relative;
   z-index: 1;
-  animation: fadeInUp 1s ease;
+  animation: fadeInUp 0.8s ease;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(220, 56, 45, 0.1);
+  border: 1px solid rgba(220, 56, 45, 0.3);
+  border-radius: 50px;
+  font-size: 14px;
+  color: var(--redis-red);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-lime);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
 }
 
 .hero-title {
@@ -34,10 +83,12 @@
 
 .greeting {
   display: block;
-  font-size: 18px;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
+  font-size: 20px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
   font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .name {
@@ -45,24 +96,33 @@
   font-size: clamp(48px, 8vw, 80px);
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   letter-spacing: -2px;
   line-height: 1.1;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-subtitle {
-  font-size: clamp(24px, 4vw, 32px);
+  font-size: clamp(20px, 3.5vw, 28px);
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
   font-weight: 400;
   letter-spacing: -0.5px;
 }
 
+.role-highlight {
+  color: var(--redis-red);
+  font-weight: 500;
+}
+
 .hero-description {
-  font-size: 18px;
+  font-size: 17px;
   color: var(--text-secondary);
   line-height: 1.8;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   max-width: 700px;
   font-weight: 400;
 }
@@ -70,6 +130,43 @@
 .hero-description strong {
   color: var(--accent-lime);
   font-weight: 600;
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
 }
 
 .hero-buttons {
@@ -90,13 +187,41 @@
 }
 
 @media (max-width: 768px) {
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .stat-item {
+    align-items: center;
+    min-width: 100px;
+  }
+
   .hero-buttons {
     flex-direction: column;
   }
 
   .btn {
     width: 100%;
+    justify-content: center;
+  }
+
+  .hero-content {
     text-align: center;
   }
-}
 
+  .hero-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

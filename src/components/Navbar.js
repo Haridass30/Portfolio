@@ -4,11 +4,29 @@ import './Navbar.css';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+
+      // Update active section based on scroll position
+      const sections = ['home', 'about', 'experience', 'projects', 'skills', 'education', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -23,19 +41,38 @@ const Navbar = () => {
     }
   };
 
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'education', label: 'Education' },
+    { id: 'contact', label: 'Contact' }
+  ];
+
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
-        <div className="nav-brand">HG</div>
+        <div className="nav-brand" onClick={() => scrollToSection('home')}>
+          <span className="brand-text">HG</span>
+          <span className="brand-dot"></span>
+        </div>
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
-          <li><button onClick={() => scrollToSection('home')}>Home</button></li>
-          <li><button onClick={() => scrollToSection('about')}>About</button></li>
-          <li><button onClick={() => scrollToSection('experience')}>Experience</button></li>
-          <li><button onClick={() => scrollToSection('projects')}>Projects</button></li>
-          <li><button onClick={() => scrollToSection('skills')}>Skills</button></li>
-          <li><button onClick={() => scrollToSection('education')}>Education</button></li>
-          <li><button onClick={() => scrollToSection('contact')}>Contact</button></li>
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => scrollToSection(item.id)}
+                className={activeSection === item.id ? 'active' : ''}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
         </ul>
+        <a href="mailto:haridass3014@gmail.com" className="nav-cta">
+          Hire Me
+        </a>
         <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>
           <span></span>
@@ -47,4 +84,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
