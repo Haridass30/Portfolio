@@ -1,5 +1,5 @@
-import React from 'react';
 import './Hero.css';
+import GlareHover from './GlareHover';
 
 const Hero = () => {
   return (
@@ -44,16 +44,26 @@ const Hero = () => {
               </div>
             </div>
             <div className="hero-buttons">
-              <button onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                      className="btn btn-primary">
+              <GlareHover
+                as="button"
+                className="glare-btn glare-btn-primary"
+                onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                glareColor="#ffffff"
+                glareOpacity={0.4}
+              >
                 <i className="fas fa-paper-plane"></i>
                 Get In Touch
-              </button>
-              <button onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
-                      className="btn btn-secondary">
+              </GlareHover>
+              <GlareHover
+                as="button"
+                className="glare-btn glare-btn-secondary"
+                onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+                glareColor="#8b5cf6"
+                glareOpacity={0.3}
+              >
                 <i className="fas fa-briefcase"></i>
                 View My Work
-              </button>
+              </GlareHover>
             </div>
           </div>
         </div>

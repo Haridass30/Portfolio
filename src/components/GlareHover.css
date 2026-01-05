@@ -1,0 +1,197 @@
+.glare-hover {
+  width: var(--gh-width);
+  height: var(--gh-height);
+  background: var(--gh-bg);
+  border-radius: var(--gh-br);
+  border: 1px solid var(--gh-border);
+  overflow: hidden;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.glare-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    var(--gh-angle),
+    hsla(0, 0%, 0%, 0) 60%,
+    var(--gh-rgba) 70%,
+    hsla(0, 0%, 0%, 0),
+    hsla(0, 0%, 0%, 0) 100%
+  );
+  transition: var(--gh-duration) ease;
+  background-size:
+    var(--gh-size) var(--gh-size),
+    100% 100%;
+  background-repeat: no-repeat;
+  background-position:
+    -100% -100%,
+    0 0;
+  pointer-events: none;
+}
+
+.glare-hover:hover {
+  cursor: pointer;
+}
+
+.glare-hover:hover::before {
+  background-position:
+    100% 100%,
+    0 0;
+}
+
+.glare-hover--play-once::before {
+  transition: none;
+}
+
+.glare-hover--play-once:hover::before {
+  transition: var(--gh-duration) ease;
+  background-position:
+    100% 100%,
+    0 0;
+}
+
+/* Button specific styles */
+.glare-hover.glare-btn {
+  padding: 14px 32px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  gap: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glare-hover.glare-btn:hover {
+  transform: translateY(-3px);
+}
+
+.glare-hover.glare-btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 4px 20px var(--shadow-glow), 0 0 40px rgba(236, 72, 153, 0.2);
+}
+
+.glare-hover.glare-btn-primary:hover {
+  box-shadow: 0 8px 30px var(--shadow-glow), 0 0 60px rgba(236, 72, 153, 0.3);
+}
+
+.glare-hover.glare-btn-secondary {
+  background: var(--glass-bg);
+  color: var(--text-primary);
+  border-color: var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+.glare-hover.glare-btn-secondary:hover {
+  background: var(--glass-hover);
+  border-color: var(--accent-violet);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.2);
+}
+
+/* Nav button style */
+.glare-hover.glare-nav-btn {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Space Grotesk', sans-serif;
+  border-radius: 6px;
+}
+
+.glare-hover.glare-nav-btn:hover {
+  color: var(--text-primary);
+  background: rgba(139, 92, 246, 0.1);
+  transform: none;
+}
+
+.glare-hover.glare-nav-btn.active {
+  color: var(--text-primary);
+  background: rgba(139, 92, 246, 0.15);
+}
+
+/* CTA button style */
+.glare-hover.glare-nav-cta {
+  padding: 10px 20px;
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px var(--shadow-glow);
+}
+
+.glare-hover.glare-nav-cta:hover {
+  box-shadow: 0 6px 25px var(--shadow-glow), 0 0 40px rgba(236, 72, 153, 0.2);
+}
+
+/* Social link style */
+.glare-hover.glare-social {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  color: var(--text-secondary);
+  backdrop-filter: blur(10px);
+}
+
+.glare-hover.glare-social:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: var(--accent-violet);
+  color: var(--accent-pink);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.25);
+}
+
+.glare-hover.glare-social i {
+  font-size: 18px;
+}
+
+/* Contact item styles */
+.glare-hover.glare-contact-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.glare-hover.glare-contact-item:hover {
+  transform: translateX(5px);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
+}
+
+.glare-hover.glare-contact-item:hover .contact-icon {
+  background: rgba(139, 92, 246, 0.2);
+}
+
+.glare-hover.glare-contact-item:hover .contact-icon i {
+  color: var(--accent-pink);
+}
+
+/* Contact card styles */
+.glare-hover.glare-contact-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.glare-hover.glare-contact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-violet);
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.2);
+}
+
+.glare-hover.glare-contact-card:hover .contact-card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.glare-hover.glare-contact-card:hover .contact-card-icon {
+  background: rgba(139, 92, 246, 0.2);
+}
+
+.glare-hover.glare-contact-card:hover .contact-card-icon i {
+  color: var(--accent-pink);
+}

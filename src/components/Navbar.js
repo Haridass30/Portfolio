@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Navbar.css';
+import GlareHover from './GlareHover';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,18 +62,28 @@ const Navbar = () => {
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
           {navItems.map((item) => (
             <li key={item.id}>
-              <button
+              <GlareHover
+                as="button"
+                className={`glare-nav-btn ${activeSection === item.id ? 'active' : ''}`}
                 onClick={() => scrollToSection(item.id)}
-                className={activeSection === item.id ? 'active' : ''}
+                glareColor="#8b5cf6"
+                glareOpacity={0.25}
+                borderColor="transparent"
               >
                 {item.label}
-              </button>
+              </GlareHover>
             </li>
           ))}
         </ul>
-        <a href="mailto:haridass3014@gmail.com" className="nav-cta">
+        <GlareHover
+          as="a"
+          href="mailto:haridass3014@gmail.com"
+          className="glare-nav-cta"
+          glareColor="#ffffff"
+          glareOpacity={0.4}
+        >
           Hire Me
-        </a>
+        </GlareHover>
         <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>
           <span></span>

@@ -1,5 +1,5 @@
-import React from 'react';
 import './Footer.css';
+import GlareHover from './GlareHover';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -20,15 +20,17 @@ const Footer = () => {
           </div>
           <div className="footer-social">
             {socialLinks.map((link, index) => (
-              <a
+              <GlareHover
                 key={index}
+                as="a"
                 href={link.href}
-                className="footer-social-link"
-                target={link.href.startsWith('http') ? '_blank' : undefined}
-                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="glare-social"
+                glareColor="#ec4899"
+                glareOpacity={0.35}
+                borderRadius="10px"
               >
                 <i className={`${link.type || 'fab'} ${link.icon}`}></i>
-              </a>
+              </GlareHover>
             ))}
           </div>
           <div className="footer-info">

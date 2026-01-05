@@ -1,5 +1,5 @@
-import React from 'react';
 import './Contact.css';
+import GlareHover from './GlareHover';
 
 const Contact = () => {
   const contactMethods = [
@@ -51,12 +51,27 @@ const Contact = () => {
           </div>
           <div className="contact-grid">
             {contactMethods.map((method, index) => (
-              <a
+              <GlareHover
                 key={index}
+                as="a"
                 href={method.href}
-                className="contact-card"
-                target={method.href.startsWith('http') ? '_blank' : undefined}
-                rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="glare-contact-card"
+                glareColor="#ec4899"
+                glareOpacity={0.3}
+                borderRadius="14px"
+                borderColor="var(--glass-border)"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1.25rem',
+                  padding: '24px',
+                  background: 'var(--glass-bg)',
+                  backdropFilter: 'blur(20px)',
+                  textDecoration: 'none',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  boxShadow: 'var(--glass-shadow)'
+                }}
               >
                 <div className="contact-card-icon">
                   <i className={`${method.type} ${method.icon}`}></i>
@@ -69,7 +84,7 @@ const Contact = () => {
                 <div className="contact-card-arrow">
                   <i className="fas fa-arrow-right"></i>
                 </div>
-              </a>
+              </GlareHover>
             ))}
           </div>
         </div>

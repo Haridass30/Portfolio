@@ -16,18 +16,19 @@
   width: 20px;
   height: 20px;
   background: var(--bg-tertiary);
-  border: 3px solid var(--redis-red);
+  border: 3px solid var(--accent-violet);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
 }
 
 .dot-inner {
   width: 8px;
   height: 8px;
-  background: var(--redis-red);
+  background: var(--accent-pink);
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
@@ -38,23 +39,25 @@
 }
 
 .experience-content {
-  background: var(--bg-tertiary);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
   border-radius: 16px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--glass-border);
   overflow: hidden;
   transition: all 0.4s ease;
+  box-shadow: var(--glass-shadow);
 }
 
 .experience-content:hover {
-  background: rgba(255, 255, 255, 0.02);
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  background: rgba(139, 92, 246, 0.08);
+  border-color: var(--accent-violet);
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.2);
   transform: translateX(5px);
 }
 
 .experience-header {
   padding: 28px 32px;
-  background: linear-gradient(135deg, rgba(220, 56, 45, 0.05) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, transparent 100%);
   border-bottom: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
@@ -93,7 +96,7 @@
 
 .experience-company i,
 .experience-location i {
-  color: var(--redis-red);
+  color: var(--accent-violet);
   font-size: 14px;
 }
 
@@ -105,15 +108,15 @@
 }
 
 .experience-type {
-  background: rgba(191, 255, 0, 0.1);
-  color: var(--accent-lime);
+  background: rgba(236, 72, 153, 0.1);
+  color: var(--accent-pink);
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border: 1px solid rgba(191, 255, 0, 0.3);
+  border: 1px solid rgba(236, 72, 153, 0.3);
 }
 
 .experience-date {
@@ -158,18 +161,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(220, 56, 45, 0.1);
+  background: rgba(139, 92, 246, 0.15);
   border-radius: 50%;
   margin-top: 2px;
 }
 
 .list-icon i {
   font-size: 10px;
-  color: var(--redis-red);
+  color: var(--accent-violet);
 }
 
 .list-text strong {
-  color: var(--accent-lime);
+  color: var(--accent-pink);
   font-weight: 600;
 }
 

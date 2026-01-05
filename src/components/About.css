@@ -23,7 +23,10 @@
 }
 
 .about-intro strong {
-  color: var(--redis-red);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 600;
 }
 
@@ -36,7 +39,7 @@
 }
 
 .about-description strong {
-  color: var(--accent-lime);
+  color: var(--accent-pink);
   font-weight: 600;
 }
 
@@ -51,17 +54,18 @@
   align-items: flex-start;
   gap: 1rem;
   padding: 1.25rem;
-  background: var(--bg-secondary);
+  background: var(--glass-bg);
   border-radius: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--glass-border);
   transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
 }
 
 .highlight-item:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(139, 92, 246, 0.1);
+  border-color: var(--accent-violet);
   transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2);
 }
 
 .highlight-icon {
@@ -70,14 +74,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(220, 56, 45, 0.1);
+  background: rgba(139, 92, 246, 0.15);
   border-radius: 10px;
   flex-shrink: 0;
 }
 
 .highlight-icon i {
   font-size: 20px;
-  color: var(--redis-red);
+  color: var(--accent-violet);
 }
 
 .highlight-content h4 {
@@ -94,13 +98,14 @@
 }
 
 .about-contact-card {
-  background: rgba(26, 26, 36, 0.8);
+  background: var(--glass-bg);
   padding: 2rem;
   border-radius: 16px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--glass-border);
   position: sticky;
   top: 100px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--glass-shadow);
 }
 
 .about-contact-card h3 {
@@ -126,23 +131,23 @@
   padding: 14px;
   border-radius: 10px;
   transition: all 0.3s ease;
-  background: var(--bg-secondary);
+  background: rgba(12, 12, 24, 0.5);
   border: 1px solid transparent;
 }
 
 .contact-item:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.3);
   transform: translateX(5px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
 }
 
 .contact-item:hover .contact-icon {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(139, 92, 246, 0.2);
 }
 
 .contact-item:hover .contact-icon i {
-  color: var(--text-primary);
+  color: var(--accent-pink);
 }
 
 .contact-icon {
@@ -159,7 +164,7 @@
 
 .contact-icon i {
   font-size: 16px;
-  color: var(--redis-red);
+  color: var(--accent-violet);
   transition: all 0.3s ease;
 }
 

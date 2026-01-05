@@ -1,5 +1,5 @@
-import React from 'react';
 import './About.css';
+import GlareHover from './GlareHover';
 
 const About = () => {
   const highlights = [
@@ -7,6 +7,13 @@ const About = () => {
     { icon: 'fa-cogs', title: 'DevOps', desc: 'CI/CD & Automation' },
     { icon: 'fa-shield-alt', title: 'Security', desc: 'Best Practices & Compliance' },
     { icon: 'fa-chart-line', title: 'Monitoring', desc: 'Observability & Alerting' }
+  ];
+
+  const contactItems = [
+    { icon: 'fa-phone', type: 'fas', label: 'Phone', value: '8525876381', href: 'tel:8525876381' },
+    { icon: 'fa-envelope', type: 'fas', label: 'Email', value: 'haridass3014@gmail.com', href: 'mailto:haridass3014@gmail.com' },
+    { icon: 'fa-linkedin', type: 'fab', label: 'LinkedIn', value: 'Connect with me', href: 'https://linkedin.com/in/hari-dass-25bb44345' },
+    { icon: 'fa-github', type: 'fab', label: 'GitHub', value: 'View my projects', href: 'https://github.com/haridass3012' }
   ];
 
   return (
@@ -42,42 +49,35 @@ const About = () => {
             <div className="about-contact-card">
               <h3>Let's Connect</h3>
               <div className="contact-info">
-                <a href="tel:8525876381" className="contact-item">
-                  <div className="contact-icon">
-                    <i className="fas fa-phone"></i>
-                  </div>
-                  <div className="contact-details">
-                    <span className="contact-label">Phone</span>
-                    <span className="contact-value">8525876381</span>
-                  </div>
-                </a>
-                <a href="mailto:haridass3014@gmail.com" className="contact-item">
-                  <div className="contact-icon">
-                    <i className="fas fa-envelope"></i>
-                  </div>
-                  <div className="contact-details">
-                    <span className="contact-label">Email</span>
-                    <span className="contact-value">haridass3014@gmail.com</span>
-                  </div>
-                </a>
-                <a href="https://linkedin.com/in/hari-dass-25bb44345" target="_blank" rel="noopener noreferrer" className="contact-item">
-                  <div className="contact-icon">
-                    <i className="fab fa-linkedin"></i>
-                  </div>
-                  <div className="contact-details">
-                    <span className="contact-label">LinkedIn</span>
-                    <span className="contact-value">Connect with me</span>
-                  </div>
-                </a>
-                <a href="https://github.com/haridass3012" target="_blank" rel="noopener noreferrer" className="contact-item">
-                  <div className="contact-icon">
-                    <i className="fab fa-github"></i>
-                  </div>
-                  <div className="contact-details">
-                    <span className="contact-label">GitHub</span>
-                    <span className="contact-value">View my projects</span>
-                  </div>
-                </a>
+                {contactItems.map((item, index) => (
+                  <GlareHover
+                    key={index}
+                    as="a"
+                    href={item.href}
+                    className="glare-contact-item"
+                    glareColor="#8b5cf6"
+                    glareOpacity={0.25}
+                    borderRadius="10px"
+                    borderColor="transparent"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '1rem',
+                      padding: '14px',
+                      background: 'rgba(12, 12, 24, 0.5)',
+                      color: 'var(--text-secondary)',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    <div className="contact-icon">
+                      <i className={`${item.type} ${item.icon}`}></i>
+                    </div>
+                    <div className="contact-details">
+                      <span className="contact-label">{item.label}</span>
+                      <span className="contact-value">{item.value}</span>
+                    </div>
+                  </GlareHover>
+                ))}
               </div>
             </div>
           </div>
