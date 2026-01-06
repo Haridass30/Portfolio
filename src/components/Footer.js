@@ -25,7 +25,7 @@ const Footer = () => {
                 as="a"
                 href={link.href}
                 className="glare-social"
-                glareColor="#ec4899"
+                glareColor="#15803d"
                 glareOpacity={0.35}
                 borderRadius="10px"
               >

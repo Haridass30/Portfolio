@@ -55,18 +55,19 @@ const About = () => {
                     as="a"
                     href={item.href}
                     className="glare-contact-item"
-                    glareColor="#8b5cf6"
+                    glareColor="#22c55e"
                     glareOpacity={0.25}
                     borderRadius="10px"
-                    borderColor="transparent"
+                    borderColor="rgba(34, 197, 94, 0.3)"
                     style={{
                       display: 'flex',
                       alignItems: 'center',
                       gap: '1rem',
                       padding: '14px',
-                      background: 'rgba(12, 12, 24, 0.5)',
-                      color: 'var(--text-secondary)',
-                      textDecoration: 'none'
+                      background: 'rgba(10, 10, 10, 0.8)',
+                      color: '#ffffff',
+                      textDecoration: 'none',
+                      width: '100%'
                     }}
                   >
                     <div className="contact-icon">

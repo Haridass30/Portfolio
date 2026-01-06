@@ -25,8 +25,8 @@
   right: 0;
   bottom: 0;
   background-image:
-    linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(34, 197, 94, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 40%, transparent 100%);
 }
@@ -38,7 +38,7 @@
   transform: translateX(-50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(236, 72, 153, 0.08) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.12) 0%, rgba(21, 128, 61, 0.08) 40%, transparent 70%);
   filter: blur(80px);
 }
 
@@ -55,11 +55,11 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
   border-radius: 50px;
   font-size: 14px;
-  color: var(--accent-violet);
+  color: var(--accent-primary);
   margin-bottom: 24px;
   font-weight: 500;
   backdrop-filter: blur(10px);
@@ -68,10 +68,10 @@
 .badge-dot {
   width: 8px;
   height: 8px;
-  background: var(--accent-pink);
+  background: var(--accent-light);
   border-radius: 50%;
   animation: pulse 2s infinite;
-  box-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
 }
 
 @keyframes pulse {
@@ -86,7 +86,7 @@
 .greeting {
   display: block;
   font-size: 20px;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 8px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -100,31 +100,25 @@
   margin-bottom: 0.5rem;
   letter-spacing: -2px;
   line-height: 1.1;
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-violet) 50%, var(--accent-pink) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
 }
 
 .hero-subtitle {
   font-size: clamp(20px, 3.5vw, 28px);
-  color: var(--text-secondary);
+  color: #ffffff;
   margin-bottom: 1.5rem;
   font-weight: 400;
   letter-spacing: -0.5px;
 }
 
 .role-highlight {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
   font-weight: 500;
 }
 
 .hero-description {
   font-size: 17px;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.8;
   margin-bottom: 2rem;
   max-width: 700px;
@@ -132,7 +126,7 @@
 }
 
 .hero-description strong {
-  color: var(--accent-pink);
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -155,16 +149,13 @@
 .stat-number {
   font-size: 28px;
   font-weight: 700;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
   letter-spacing: -1px;
 }
 
 .stat-label {
   font-size: 13px;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -173,7 +164,7 @@
 .stat-divider {
   width: 1px;
   height: 40px;
-  background: linear-gradient(180deg, transparent, var(--accent-violet), transparent);
+  background: linear-gradient(180deg, transparent, var(--accent-primary), transparent);
 }
 
 .hero-buttons {

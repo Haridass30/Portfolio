@@ -12,7 +12,7 @@
 .navbar.scrolled {
   background: rgba(3, 3, 8, 0.9);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 30px rgba(139, 92, 246, 0.1);
+  box-shadow: 0 4px 30px rgba(34, 197, 94, 0.15);
 }
 
 .navbar .container {
@@ -46,10 +46,10 @@
 .brand-dot {
   width: 8px;
   height: 8px;
-  background: var(--accent-pink);
+  background: var(--accent-light);
   border-radius: 50%;
   margin-top: 8px;
-  box-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
 }
 
 .nav-menu {
@@ -88,7 +88,7 @@
 
 .nav-menu button:hover {
   color: var(--text-primary);
-  background: rgba(139, 92, 246, 0.1);
+  background: rgba(34, 197, 94, 0.1);
 }
 
 .nav-menu button:hover::after {
@@ -97,7 +97,7 @@
 
 .nav-menu button.active {
   color: var(--text-primary);
-  background: rgba(139, 92, 246, 0.15);
+  background: rgba(34, 197, 94, 0.15);
 }
 
 .nav-menu button.active::after {
@@ -118,7 +118,7 @@
 
 .nav-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px var(--shadow-glow), 0 0 40px rgba(236, 72, 153, 0.2);
+  box-shadow: 0 6px 25px var(--shadow-glow), 0 0 40px rgba(34, 197, 94, 0.2);
 }
 
 .hamburger {
@@ -132,7 +132,7 @@
 .hamburger span {
   width: 24px;
   height: 2px;
-  background: var(--accent-violet);
+  background: var(--accent-primary);
   transition: all 0.3s ease;
   border-radius: 2px;
 }

@@ -1,5 +1,6 @@
 import './Hero.css';
 import GlareHover from './GlareHover';
+import TextType from './TextType';
 
 const Hero = () => {
   return (
@@ -20,7 +21,14 @@ const Hero = () => {
               <span className="name">Haridass G</span>
             </h1>
             <h2 className="hero-subtitle">
-              <span className="role-highlight">Cloud Infrastructure</span> & <span className="role-highlight">DevOps Engineer</span>
+              <TextType
+                text={["AWS Cloud", "DevOps Engineer"]}
+                typingSpeed={75}
+                pauseDuration={1500}
+                showCursor={true}
+                cursorCharacter="|"
+                className="role-highlight"
+              />
             </h2>
             <p className="hero-description">
               With 1.3+ years of hands-on experience designing, deploying, and scaling cloud-based systems.
@@ -58,7 +66,7 @@ const Hero = () => {
                 as="button"
                 className="glare-btn glare-btn-secondary"
                 onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
-                glareColor="#8b5cf6"
+                glareColor="#22c55e"
                 glareOpacity={0.3}
               >
                 <i className="fas fa-briefcase"></i>

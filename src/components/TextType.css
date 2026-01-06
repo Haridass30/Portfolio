@@ -1,0 +1,20 @@
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+  letter-spacing: -0.5px;
+}
+
+.text-type-content {
+  display: inline;
+}
+
+.text-type-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: 400;
+  color: var(--accent-primary);
+}
+
+.text-type-cursor.hidden {
+  visibility: hidden;
+}

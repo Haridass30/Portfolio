@@ -66,7 +66,7 @@ const Navbar = () => {
                 as="button"
                 className={`glare-nav-btn ${activeSection === item.id ? 'active' : ''}`}
                 onClick={() => scrollToSection(item.id)}
-                glareColor="#8b5cf6"
+                glareColor="#22c55e"
                 glareOpacity={0.25}
                 borderColor="transparent"
               >

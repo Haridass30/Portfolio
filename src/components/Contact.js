@@ -56,7 +56,7 @@ const Contact = () => {
                 as="a"
                 href={method.href}
                 className="glare-contact-card"
-                glareColor="#ec4899"
+                glareColor="#15803d"
                 glareOpacity={0.3}
                 borderRadius="14px"
                 borderColor="var(--glass-border)"
