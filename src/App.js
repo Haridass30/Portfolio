@@ -10,6 +10,7 @@ import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ClickSpark from './components/ClickSpark';
+import StarField from './components/StarField';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       sparkCount={8}
       duration={400}
     >
-      <div className="App">
+      <StarField />
+      <div className="App" style={{ position: 'relative', zIndex: 1 }}>
         <Navbar />
         <Hero />
         <About />

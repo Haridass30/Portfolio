@@ -12,15 +12,22 @@ const Education = () => {
 
   const certifications = [
     {
-      title: 'Java Fullstack (J2EE)',
-      provider: 'Yuva Sakthi Academy',
-      icon: 'fa-java',
-      iconType: 'fab'
+      title: 'AWS Certified Cloud Practitioner (CLF-C02)',
+      provider: 'In Progress',
+      icon: 'fa-aws',
+      iconType: 'fab',
+      inProgress: true
     },
     {
       title: 'Git & GitHub',
       provider: 'Udemy',
       icon: 'fa-git-alt',
+      iconType: 'fab'
+    },
+    {
+      title: 'Java Fullstack (J2EE)',
+      provider: 'Yuva Sakthi Academy',
+      icon: 'fa-java',
       iconType: 'fab'
     }
   ];
@@ -71,8 +78,8 @@ const Education = () => {
                     <h4 className="cert-title">{cert.title}</h4>
                     <p className="cert-provider">{cert.provider}</p>
                   </div>
-                  <div className="cert-badge">
-                    <i className="fas fa-check-circle"></i>
+                  <div className={`cert-badge ${cert.inProgress ? 'in-progress' : ''}`}>
+                    <i className={`fas ${cert.inProgress ? 'fa-spinner' : 'fa-check-circle'}`}></i>
                   </div>
                 </div>
               ))}

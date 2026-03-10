@@ -22,7 +22,7 @@ const Hero = () => {
             </h1>
             <h2 className="hero-subtitle">
               <TextType
-                text={["AWS Cloud", "DevOps Engineer"]}
+                text={["AWS & DevOps Engineer", "Cloud Infrastructure", "Kubernetes & GitOps", "DevSecOps Pipelines"]}
                 typingSpeed={75}
                 pauseDuration={1500}
                 showCursor={true}
@@ -31,24 +31,30 @@ const Hero = () => {
               />
             </h2>
             <p className="hero-description">
-              With 1.3+ years of hands-on experience designing, deploying, and scaling cloud-based systems.
-              I specialize in <strong>AWS, DevOps automations, CI/CD, Kubernetes, Docker, monitoring, and performance optimization</strong>.
-              I build <strong>scalable, secure, and highly available</strong> infrastructures that deliver strong performance and cost efficiency.
+              With nearly 2 years of hands-on production experience designing, deploying, and
+              managing cloud-native infrastructure on <strong>Amazon EKS and AWS</strong>.
+              Proven expertise in <strong>Kubernetes orchestration, GitOps (ArgoCD), DevSecOps CI/CD pipelines, Terraform IaC, and multi-region Disaster Recovery</strong>.
+              Passionate about building <strong>resilient, scalable, secure, and cost-optimised</strong> cloud infrastructure.
             </p>
             <div className="hero-stats">
               <div className="stat-item">
-                <span className="stat-number">1.3+</span>
+                <span className="stat-number">~2</span>
                 <span className="stat-label">Years Experience</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
-                <span className="stat-number">10+</span>
-                <span className="stat-label">Projects Deployed</span>
+                <span className="stat-number">25%</span>
+                <span className="stat-label">EKS Cost Reduced</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
-                <span className="stat-number">99.9%</span>
-                <span className="stat-label">Uptime Achieved</span>
+                <span className="stat-number">70%</span>
+                <span className="stat-label">Security Risk Cut</span>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat-item">
+                <span className="stat-number">35%</span>
+                <span className="stat-label">MTTR Improved</span>
               </div>
             </div>
             <div className="hero-buttons">

@@ -32,7 +32,7 @@ const Contact = () => {
       type: 'fab',
       title: 'GitHub',
       value: 'View my code',
-      href: 'https://github.com/haridass3012',
+      href: 'https://github.com/haridass30',
       description: 'Check my repositories'
     }
   ];

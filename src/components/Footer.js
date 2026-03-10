@@ -6,7 +6,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: 'fa-linkedin', href: 'https://linkedin.com/in/hari-dass-25bb44345' },
-    { icon: 'fa-github', href: 'https://github.com/haridass3012' },
+    { icon: 'fa-github', href: 'https://github.com/haridass30' },
     { icon: 'fa-envelope', href: 'mailto:haridass3014@gmail.com', type: 'fas' }
   ];
 

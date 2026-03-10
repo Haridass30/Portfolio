@@ -187,6 +187,19 @@
   font-size: 20px;
 }
 
+.cert-badge.in-progress {
+  color: #facc15;
+}
+
+.cert-badge.in-progress i {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 @media (max-width: 900px) {
   .education-grid {
     grid-template-columns: 1fr;

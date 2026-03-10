@@ -6,17 +6,19 @@ const Experience = () => {
     {
       title: 'AWS & DevOps Engineer',
       company: 'AVSECOMHUB',
-      location: 'India',
-      period: 'May 2024 – Present',
+      location: 'Tamil Nadu, India',
+      period: 'April 2023 – Present',
       type: 'Full-time',
       responsibilities: [
-        { text: 'Provisioned and managed AWS resources:', highlight: 'EC2, RDS, S3, ALB, Auto Scaling, EKS, ECS, Fargate' },
-        { text: 'Designed and maintained', highlight: 'CI/CD pipelines with GitHub Actions & Docker', suffix: 'enabling zero-downtime deployments' },
-        { text: 'Implemented', highlight: 'Redis caching', suffix: 'to reduce DB load and improve response time' },
-        { text: 'Improved global performance using', highlight: 'Cloudflare CDN' },
-        { text: 'Built observability stack:', highlight: 'CloudWatch, Prometheus, Grafana, Loki, Kibana' },
-        { text: 'Reduced AWS costs through rightsizing and continuous optimization' },
-        { text: 'Designed & optimized', highlight: 'MySQL databases', suffix: 'for performance and scalability' }
+        { text: 'Led end-to-end migration of production Vendure eCommerce platform from', highlight: 'Amazon ECS to EKS', suffix: '; designed Blue/Green deployment via ArgoCD + GitHub Actions, reducing rollback time from 20 min to under 2 min with zero downtime' },
+        { text: 'Engineered', highlight: 'DevSecOps CI/CD pipeline integrating Trivy container image scanning', suffix: ' — critical and high CVEs auto-block deployments, reducing container security risk by ~70%' },
+        { text: 'Provisioned and managed all AWS and EKS infrastructure using', highlight: 'Terraform IaC with modular configurations', suffix: ' across dev, staging, and production; enforced IAM least-privilege and Kubernetes RBAC' },
+        { text: 'Architected', highlight: 'multi-region active-passive Disaster Recovery', suffix: ' using RDS Multi-AZ, S3 cross-region replication, and Route 53 automated DNS failover — RTO < 30 min, RPO < 15 min' },
+        { text: 'Implemented', highlight: 'Kubecost for per-namespace cost visibility', suffix: ' across EKS clusters; rightsized CPU/memory requests, achieving ~25% reduction in EKS spend' },
+        { text: 'Deployed full-stack observability:', highlight: 'Prometheus, Grafana, Loki, CloudWatch', suffix: ' with custom alerting, reducing MTTR by ~35%; integrated Redis caching to cut DB load by ~50%' },
+        { text: 'Configured', highlight: 'VPC networking, Security Groups, NACLs, SSL/TLS via Nginx Ingress', suffix: ', and Cloudflare CDN for secure, highly available connectivity' },
+        { text: 'Automated workflows using', highlight: 'Bash scripts and Python (Boto3)', suffix: ' — S3 lifecycle management, EC2 Auto Scaling, SNS alerting, and health checks' },
+        { text: 'Managed', highlight: 'Docker containerisation of microservices', suffix: ', maintained Helm charts, and administered Linux (Ubuntu) servers' }
       ]
     }
   ];

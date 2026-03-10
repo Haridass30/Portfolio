@@ -6,30 +6,86 @@ const Skills = () => {
     {
       icon: 'fa-aws',
       iconType: 'fab',
-      title: 'Cloud & DevOps',
+      title: 'Cloud Platform',
       level: 'Expert',
-      skills: ['AWS (EC2, RDS, S3, ALB)', 'Auto Scaling, ECS, Fargate', 'Kubernetes', 'Docker', 'Nginx', 'GitHub Actions', 'CI/CD Pipelines', 'Grafana', 'Prometheus', 'Loki']
+      skills: ['EC2', 'EKS', 'ECS', 'Fargate', 'ECR', 'RDS', 'S3', 'ALB', 'Route 53', 'Lambda', 'CloudWatch', 'SNS', 'IAM', 'Auto Scaling', 'VPC']
+    },
+    {
+      icon: 'fa-dharmachakra',
+      iconType: 'fas',
+      title: 'Container & Orchestration',
+      level: 'Expert',
+      skills: ['Kubernetes (EKS)', 'Docker', 'Helm', 'ArgoCD', 'GitOps']
+    },
+    {
+      icon: 'fa-code-branch',
+      iconType: 'fas',
+      title: 'CI/CD & DevSecOps',
+      level: 'Expert',
+      skills: ['GitHub Actions', 'ArgoCD', 'Trivy', 'Blue/Green Deployments', 'Canary Releases', 'RBAC', 'IAM Least-Privilege', 'Shift-Left Security']
+    },
+    {
+      icon: 'fa-cubes',
+      iconType: 'fas',
+      title: 'Infrastructure as Code',
+      level: 'Advanced',
+      skills: ['Terraform']
+    },
+    {
+      icon: 'fa-shield-alt',
+      iconType: 'fas',
+      title: 'Backup & DR',
+      level: 'Advanced',
+      skills: ['Velero', 'RDS Multi-AZ', 'S3 Cross-Region Replication', 'Route 53 Failover', 'RTO/RPO Planning']
+    },
+    {
+      icon: 'fa-coins',
+      iconType: 'fas',
+      title: 'Cost Management',
+      level: 'Advanced',
+      skills: ['Kubecost', 'AWS Cost Explorer', 'EC2 Rightsizing', 'Resource Quotas', 'FinOps']
+    },
+    {
+      icon: 'fa-chart-line',
+      iconType: 'fas',
+      title: 'Monitoring & Observability',
+      level: 'Expert',
+      skills: ['Prometheus', 'Grafana', 'Loki', 'CloudWatch', 'SNS Alerting']
+    },
+    {
+      icon: 'fa-network-wired',
+      iconType: 'fas',
+      title: 'Networking & Security',
+      level: 'Advanced',
+      skills: ['VPC', 'Subnets', 'Security Groups', 'NACLs', 'Nginx Ingress', 'SSL/TLS', 'Cloudflare CDN']
+    },
+    {
+      icon: 'fa-terminal',
+      iconType: 'fas',
+      title: 'Scripting & Automation',
+      level: 'Advanced',
+      skills: ['Bash Shell Scripting', 'Python (Boto3)', 'AWS CLI']
     },
     {
       icon: 'fa-database',
       iconType: 'fas',
-      title: 'Backend & Database',
+      title: 'Databases & Caching',
       level: 'Advanced',
-      skills: ['Node.js', 'Java', 'MySQL', 'GraphQL API', 'Python', 'REST APIs']
+      skills: ['MySQL (RDS)', 'Redis', 'GraphQL API']
     },
     {
       icon: 'fa-code',
       iconType: 'fas',
       title: 'Frontend',
       level: 'Proficient',
-      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'WordPress']
+      skills: ['HTML', 'CSS', 'Bootstrap', 'WordPress']
     },
     {
       icon: 'fa-tools',
       iconType: 'fas',
-      title: 'Tools & Platforms',
+      title: 'Version Control & OS',
       level: 'Experienced',
-      skills: ['VS Code', 'MySQL Workbench', 'Eclipse', 'Linux (Ubuntu)', 'Windows', 'Git & GitHub']
+      skills: ['Git', 'GitHub', 'Linux (Ubuntu)', 'Windows']
     }
   ];
 

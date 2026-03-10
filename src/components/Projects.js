@@ -3,67 +3,38 @@ import './Projects.css';
 const Projects = () => {
   const projects = [
     {
-      icon: 'fa-shopping-cart',
-      title: 'eCommerce Website Infrastructure',
-      tags: ['Node.js', 'AWS', 'Kubernetes', 'Docker'],
-      description: 'Scaled production workloads with EC2, ALB, RDS (MySQL), S3, Redis, Cloudflare CDN.',
+      icon: 'fa-ship',
+      title: 'Vendure eCommerce – EKS Migration, GitOps & DevSecOps Pipeline',
+      tags: ['EKS', 'ArgoCD', 'GitHub Actions', 'Terraform', 'Helm', 'Docker', 'ECR', 'Trivy', 'Velero', 'Kubecost'],
+      description: 'Containerised and migrated full eCommerce stack to EKS with Helm-managed deployments; ArgoCD continuously syncs cluster state from Git — fully automated GitOps with auditability.',
       features: [
-        'Automated deployments using GitHub Actions, ECS Fargate, and Kubernetes',
-        'Configured Nginx for secure reverse proxy, SSL, and load balancing',
-        'Centralized monitoring with Prometheus, Grafana, Loki, CloudWatch, Kibana',
-        'Reduced operational overhead and AWS cost significantly'
+        'Blue/Green deployment pipeline shifts production traffic after health-check validation; failed releases auto-rollback in under 2 minutes with zero downtime',
+        'Trivy scans every Docker image in CI — high and critical CVEs block promotion to production ECR, enforcing shift-left DevSecOps',
+        'Velero performs daily scheduled backups of EKS workloads and PVs to S3; full cluster disaster restore tested within 30 minutes',
+        'Kubecost dashboards provide real-time per-service cost visibility — eliminated ~25% wasted EKS spend through rightsizing',
+        'Full observability with Prometheus, Grafana, Loki, and Cloudflare CDN + Nginx Ingress for secure connectivity'
       ],
       metrics: [
-        { value: '99.9%', label: 'Uptime' },
-        { value: '40%', label: 'Cost Reduced' }
+        { value: '<2min', label: 'Rollback Time' },
+        { value: '70%', label: 'Security Risk Cut' },
+        { value: '25%', label: 'Cost Reduced' }
       ]
     },
     {
-      icon: 'fa-bell',
-      title: 'Order Automation & Alerting',
-      tags: ['Python', 'AWS Lambda', 'MySQL', 'AWS'],
-      description: 'Built automation workflows using Python and AWS Lambda to track events: cancellations, payment failures, refunds.',
+      icon: 'fa-globe',
+      title: 'Multi-Region Disaster Recovery Architecture on AWS',
+      tags: ['Terraform', 'Route 53', 'RDS Multi-AZ', 'S3 Replication', 'EKS', 'Velero', 'CloudWatch', 'SNS'],
+      description: 'Designed active-passive DR strategy across two AWS regions; Route 53 health checks trigger automatic DNS failover with zero manual intervention during a regional outage.',
       features: [
-        'Developed Python scripts with AWS Lambda for serverless automation',
-        'Integrated MySQL database for order tracking and event logging',
-        'Sent real-time alert notifications with order & customer details',
-        'Generated daily automated reports for management'
+        'RDS cross-region read replica auto-promotes to primary during failover; S3 cross-region replication guarantees object-level data consistency',
+        'Entire DR infrastructure codified in Terraform with reusable modules — any AWS region provisioned from scratch in under 15 minutes',
+        'CloudWatch Alarms and SNS notifications provide real-time DR event visibility and on-call alerting',
+        'Velero manages scheduled EKS cluster and PV backups to S3 for full disaster recovery'
       ],
       metrics: [
-        { value: '60%', label: 'Faster Response' },
-        { value: '100+', label: 'Daily Alerts' }
-      ]
-    },
-    {
-      icon: 'fa-comments',
-      title: 'CPaaS Platform',
-      tags: ['AWS SES', 'AWS SNS', 'Node.js', 'API'],
-      description: 'Built a Communications Platform as a Service (CPaaS) using AWS services for messaging and notifications.',
-      features: [
-        'Integrated AWS SES for transactional and marketing emails',
-        'Implemented AWS SNS for push notifications and SMS delivery',
-        'Built scalable API endpoints for communication services',
-        'Designed fault-tolerant architecture with high availability'
-      ],
-      metrics: [
-        { value: '10K+', label: 'Messages/Day' },
-        { value: '99%', label: 'Delivery Rate' }
-      ]
-    },
-    {
-      icon: 'fa-store',
-      title: 'Headless eCommerce Website',
-      tags: ['Remix', 'React', 'Node.js', 'Tailwind'],
-      description: 'Created a modern eCommerce website using headless architecture with Vendure as backend.',
-      features: [
-        'Built responsive frontend with Remix and React framework',
-        'Styled with Tailwind CSS for modern UI/UX design',
-        'Integrated Vendure headless eCommerce backend',
-        'Implemented server-side rendering for optimal performance'
-      ],
-      metrics: [
-        { value: '2s', label: 'Load Time' },
-        { value: '95+', label: 'Performance Score' }
+        { value: '<30min', label: 'RTO' },
+        { value: '<15min', label: 'RPO' },
+        { value: '15min', label: 'Region Provision' }
       ]
     }
   ];
